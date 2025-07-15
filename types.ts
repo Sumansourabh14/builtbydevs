@@ -1,4 +1,5 @@
 export type PortfolioProps = {
+  _id: string;
   name: string;
   url: string;
   designation: string;
