@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Ananya Sharma",
+    "url": "https://shamv.framer.website/",
+    "designation": "Frontend Developer",
+    "stack": ["React", "TypeScript", "Tailwind CSS"],
+    "experience": 2,
+    "country": "India",
+    "githubUrl": "https://github.com/ananyasharma"
+  },
+  {
+    "name": "Carlos Ruiz",
+    "url": "https://shamv.framer.website/",
+    "designation": "Fullstack Developer",
+    "stack": ["Next.js", "Node.js", "MongoDB"],
+    "experience": 6,
+    "country": "Spain",
+    "githubUrl": "https://github.com/carlosruizdev"
+  },
+  {
+    "name": "Mei Lin",
+    "url": "https://shamv.framer.website/",
+    "designation": "UI Engineer",
+    "stack": ["Vue", "Nuxt", "SCSS"],
+    "experience": 3,
+    "country": "Singapore",
+    "githubUrl": "https://github.com/meilincode"
+  },
+  {
+    "name": "Rohan Gupta",
+    "url": "https://shamv.framer.website/",
+    "designation": "Backend Developer",
+    "stack": ["Node.js", "Express", "PostgreSQL"],
+    "experience": 4,
+    "country": "India",
+    "githubUrl": "https://github.com/rohangupta"
+  }
+]
