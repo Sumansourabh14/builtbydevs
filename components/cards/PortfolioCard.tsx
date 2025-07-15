@@ -30,13 +30,17 @@ const PortfolioCard = ({
         <p className="text-sm text-muted-foreground">{designation}</p>
       </CardHeader>
       <CardContent className="text-sm space-y-2">
-        <p>
-          <strong>Stack:</strong> {stack.join(", ")}
-        </p>
-        <p>
-          <strong>Experience:</strong> {experience}{" "}
-          {experience === 1 ? "year" : "years"}
-        </p>
+        {!stack.includes("") && (
+          <p>
+            <strong>Stack:</strong> {stack.join(", ")}
+          </p>
+        )}
+        {experience && (
+          <p>
+            <strong>Experience:</strong> {experience}{" "}
+            {experience === 1 ? "year" : "years"}
+          </p>
+        )}
         {country && (
           <p>
             <strong>Country:</strong> {country}
