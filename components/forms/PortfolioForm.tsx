@@ -84,19 +84,30 @@ export default function PortfolioForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto">
-      <div>
+      <div className="space-y-2">
         <Label htmlFor="name">Name</Label>
-        <Input name="name" id="name" required />
+        <Input name="name" id="name" placeholder="John Doe" required />
       </div>
-      <div>
+      <div className="space-y-2">
         <Label htmlFor="url">Portfolio URL</Label>
-        <Input name="url" id="url" type="url" required />
+        <Input
+          name="url"
+          id="url"
+          type="url"
+          placeholder="Enter your amazing portfolio URL"
+          required
+        />
       </div>
-      <div>
+      <div className="space-y-2">
         <Label htmlFor="githubUrl">GitHub URL</Label>
-        <Input name="githubUrl" id="githubUrl" type="url" />
+        <Input
+          name="githubUrl"
+          id="githubUrl"
+          placeholder="Enter your GitHub profile URL"
+          type="url"
+        />
       </div>
-      <div>
+      <div className="space-y-2">
         <Label htmlFor="designation">Designation</Label>
         <Input
           name="designation"
@@ -104,35 +115,47 @@ export default function PortfolioForm() {
           placeholder="e.g., Frontend Developer"
         />
       </div>
-      <div>
+      <div className="space-y-2">
         <Label htmlFor="stack">Stack (comma-separated)</Label>
         <Input name="stack" id="stack" placeholder="React, Node.js, MongoDB" />
       </div>
-      <div>
-        <Label htmlFor="experience">Experience (in years)</Label>
-        <Input name="experience" id="experience" type="number" min="0" />
-      </div>
-      <div>
-        <Label>Country</Label>
-        <Select
-          required
-          value={country}
-          onValueChange={(value) => setCountry(value)}
-        >
-          <SelectTrigger>
-            <SelectValue placeholder="Select your country" />
-          </SelectTrigger>
-          <SelectContent>
-            {countries.map((c) => (
-              <SelectItem key={c} value={c}>
-                {c}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
+      <section className="grid grid-cols-2 gap-8">
+        <div className="space-y-2">
+          <Label htmlFor="experience">Experience (in years)</Label>
+          <Input
+            name="experience"
+            id="experience"
+            type="number"
+            min="0"
+            placeholder="2"
+          />
+        </div>
+        <div className="space-y-2">
+          <Label>Country</Label>
+          <Select
+            required
+            value={country}
+            onValueChange={(value) => setCountry(value)}
+          >
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="Select your country" />
+            </SelectTrigger>
+            <SelectContent>
+              {countries.map((c) => (
+                <SelectItem key={c} value={c}>
+                  {c}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+      </section>
 
-      <Button type="submit" disabled={loading} className="w-full">
+      <Button
+        type="submit"
+        disabled={loading}
+        className="w-full cursor-pointer"
+      >
         {loading ? "Submitting..." : "Submit Portfolio"}
       </Button>
     </form>
