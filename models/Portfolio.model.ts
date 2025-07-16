@@ -6,9 +6,15 @@ const portfolioSchema = new Schema(
       type: String,
       required: true,
     },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
     url: {
       type: String,
       required: true,
+      unique: true,
     },
     designation: {
       type: String,
@@ -25,6 +31,7 @@ const portfolioSchema = new Schema(
     },
     githubUrl: {
       type: String,
+      unique: true,
     },
     approved: {
       type: Boolean,

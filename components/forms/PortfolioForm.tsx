@@ -47,6 +47,7 @@ export default function PortfolioForm() {
 
     const payload = {
       name: formData.get("name"),
+      email: formData.get("email"),
       url: formData.get("url"),
       designation: formData.get("designation"),
       stack: formData
@@ -69,7 +70,6 @@ export default function PortfolioForm() {
       });
 
       const data = await res.json();
-      console.log(data);
       if (!res.ok) throw new Error(data.error || "Something went wrong");
 
       setOpenSuccessPopup(true);
@@ -94,6 +94,16 @@ export default function PortfolioForm() {
         <div className="space-y-2">
           <Label htmlFor="name">Name</Label>
           <Input name="name" id="name" placeholder="John Doe" required />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="email">Email</Label>
+          <Input
+            name="email"
+            id="email"
+            type="email"
+            placeholder="johndoe@gmail.com"
+            required
+          />
         </div>
         <div className="space-y-2">
           <Label htmlFor="url">Portfolio URL</Label>
