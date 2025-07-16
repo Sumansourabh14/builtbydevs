@@ -7,4 +7,5 @@ export type PortfolioProps = {
   experience: number;
   country: string;
   githubUrl: string;
+  approved: boolean;
 };

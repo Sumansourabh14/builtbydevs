@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 export async function GET() {
   await connectDb();
 
-  const portfolios = await Portfolio.find({ approved: true });
+  const portfolios = await Portfolio.find({ approved: false });
 
   return NextResponse.json({
     success: true,

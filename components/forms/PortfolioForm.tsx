@@ -79,6 +79,8 @@ export default function PortfolioForm() {
       } else {
         toast.error("An unknown error occurred.");
       }
+    } finally {
+      setLoading(false);
     }
   };
 
