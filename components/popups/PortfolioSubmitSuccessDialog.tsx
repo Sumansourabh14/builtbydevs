@@ -20,13 +20,14 @@ const PortfolioSubmitSuccessDialog = ({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Your portfolio has been submitted!</DialogTitle>
+          <DialogTitle>Hang tight — your portfolio is in review!</DialogTitle>
           <DialogDescription>
-            Once approved, it will appear on the{" "}
+            We’ll shoot you an email once it’s approved. Then it’ll go live on
+            the{" "}
             <Link href="/portfolio/browse" className="underline">
               Browse Portfolios
             </Link>{" "}
-            page.
+            page for the world to see 🚀
           </DialogDescription>
         </DialogHeader>
       </DialogContent>
