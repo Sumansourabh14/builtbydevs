@@ -11,43 +11,32 @@ import {
 } from "@/components/ui/card";
 import { PortfolioProps } from "@/types";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 export default function AdminPage() {
   const [pending, setPending] = useState<PortfolioProps[]>([]);
-  const [authorized, setAuthorized] = useState(false);
-  const searchParams = useSearchParams();
 
   useEffect(() => {
-    const pass = searchParams.get("password");
-    if (pass === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
-      setAuthorized(true);
-    }
-  }, [searchParams]);
-
-  useEffect(() => {
-    if (!authorized) return;
-
     fetch("/api/pending-portfolios")
       .then((res) => res.json())
       .then((data) => setPending(data.data || []));
-  }, [authorized]);
-
-  if (!authorized) {
-    return (
-      <div className="text-center py-20">
-        <h2 className="text-2xl font-semibold">Unauthorized</h2>
-        <p className="text-muted-foreground">
-          You must provide a valid password in the URL.
-        </p>
-      </div>
-    );
-  }
+  }, []);
 
   return (
-    <main className="max-w-2xl mx-auto py-10 space-y-4">
+    <section className="max-w-2xl mx-auto py-10 space-y-4 min-h-10/12">
+      <Button
+        onClick={() =>
+          fetch("/api/admin/logout", { method: "POST" }).then(() =>
+            location.reload()
+          )
+        }
+        variant={"destructive"}
+        className="cursor-pointer"
+      >
+        Logout
+      </Button>
+
       <H1 title="Pending Portfolios" />
       {pending.length === 0 ? (
         <p>No pending portfolios</p>
@@ -107,6 +96,6 @@ export default function AdminPage() {
           </Card>
         ))
       )}
-    </main>
+    </section>
   );
 }
