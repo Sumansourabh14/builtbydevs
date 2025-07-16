@@ -26,6 +26,10 @@ const portfolioSchema = new Schema(
     githubUrl: {
       type: String,
     },
+    approved: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,

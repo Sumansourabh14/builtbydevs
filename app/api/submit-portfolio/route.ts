@@ -23,6 +23,7 @@ export async function POST(request: Request) {
     experience,
     country,
     githubUrl,
+    approved: false,
   });
 
   return NextResponse.json({
