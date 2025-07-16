@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useState } from "react";
 import { toast } from "sonner";
+import PortfolioSubmitSuccessDialog from "../popups/PortfolioSubmitSuccessDialog";
 import {
   Select,
   SelectContent,
@@ -28,6 +29,7 @@ const countries = [
 
 export default function PortfolioForm() {
   const [loading, setLoading] = useState(false);
+  const [openSuccessPopup, setOpenSuccessPopup] = useState(false);
   const [country, setCountry] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -70,13 +72,15 @@ export default function PortfolioForm() {
       console.log(data);
       if (!res.ok) throw new Error(data.error || "Something went wrong");
 
-      toast.success("Portfolio submitted successfully!");
+      setOpenSuccessPopup(true);
       form.reset();
       setCountry("");
     } catch (err) {
       if (err instanceof Error) {
+        setOpenSuccessPopup(false);
         toast.error(err.message);
       } else {
+        setOpenSuccessPopup(false);
         toast.error("An unknown error occurred.");
       }
     } finally {
@@ -85,81 +89,91 @@ export default function PortfolioForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto">
-      <div className="space-y-2">
-        <Label htmlFor="name">Name</Label>
-        <Input name="name" id="name" placeholder="John Doe" required />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="url">Portfolio URL</Label>
-        <Input
-          name="url"
-          id="url"
-          type="url"
-          placeholder="Enter your amazing portfolio URL"
-          required
-        />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="githubUrl">GitHub URL</Label>
-        <Input
-          name="githubUrl"
-          id="githubUrl"
-          placeholder="Enter your GitHub profile URL"
-          type="url"
-        />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="designation">Designation</Label>
-        <Input
-          name="designation"
-          id="designation"
-          placeholder="e.g., Frontend Developer"
-        />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="stack">Stack (comma-separated)</Label>
-        <Input name="stack" id="stack" placeholder="React, Node.js, MongoDB" />
-      </div>
-      <section className="grid grid-cols-2 gap-8">
+    <>
+      <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto">
         <div className="space-y-2">
-          <Label htmlFor="experience">Experience (in years)</Label>
+          <Label htmlFor="name">Name</Label>
+          <Input name="name" id="name" placeholder="John Doe" required />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="url">Portfolio URL</Label>
           <Input
-            name="experience"
-            id="experience"
-            type="number"
-            min="0"
-            placeholder="2"
+            name="url"
+            id="url"
+            type="url"
+            placeholder="Enter your amazing portfolio URL"
+            required
           />
         </div>
         <div className="space-y-2">
-          <Label>Country</Label>
-          <Select
-            required
-            value={country}
-            onValueChange={(value) => setCountry(value)}
-          >
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select your country" />
-            </SelectTrigger>
-            <SelectContent>
-              {countries.map((c) => (
-                <SelectItem key={c} value={c}>
-                  {c}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <Label htmlFor="githubUrl">GitHub URL</Label>
+          <Input
+            name="githubUrl"
+            id="githubUrl"
+            placeholder="Enter your GitHub profile URL"
+            type="url"
+          />
         </div>
-      </section>
+        <div className="space-y-2">
+          <Label htmlFor="designation">Designation</Label>
+          <Input
+            name="designation"
+            id="designation"
+            placeholder="e.g., Frontend Developer"
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="stack">Stack (comma-separated)</Label>
+          <Input
+            name="stack"
+            id="stack"
+            placeholder="React, Node.js, MongoDB"
+          />
+        </div>
+        <section className="grid grid-cols-2 gap-8">
+          <div className="space-y-2">
+            <Label htmlFor="experience">Experience (in years)</Label>
+            <Input
+              name="experience"
+              id="experience"
+              type="number"
+              min="0"
+              placeholder="2"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label>Country</Label>
+            <Select
+              required
+              value={country}
+              onValueChange={(value) => setCountry(value)}
+            >
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Select your country" />
+              </SelectTrigger>
+              <SelectContent>
+                {countries.map((c) => (
+                  <SelectItem key={c} value={c}>
+                    {c}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        </section>
 
-      <Button
-        type="submit"
-        disabled={loading}
-        className="w-full cursor-pointer"
-      >
-        {loading ? "Submitting..." : "Submit Portfolio"}
-      </Button>
-    </form>
+        <Button
+          type="submit"
+          disabled={loading}
+          className="w-full cursor-pointer"
+        >
+          {loading ? "Submitting..." : "Submit Portfolio"}
+        </Button>
+      </form>
+      <PortfolioSubmitSuccessDialog
+        open={openSuccessPopup}
+        onOpenChange={setOpenSuccessPopup}
+      />
+    </>
   );
 }
