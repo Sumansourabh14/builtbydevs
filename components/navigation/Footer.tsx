@@ -26,6 +26,11 @@ const Footer = () => {
           ))}
         </NavigationMenuList>
       </NavigationMenu>
+      <section className="text-center mt-20">
+        <p className="tracking-tighter text-6xl sm:text-8xl lg:text-[10rem] xl:text-[12rem] 2xl:text-[14rem]">
+          BuiltBy<span className="underline">Devs</span>
+        </p>
+      </section>
       <Separator className="mt-6" />
     </footer>
   );
