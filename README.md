@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛠️ BuiltbyDevs
 
-## Getting Started
+**A curated directory of developer portfolios.**  
+Showcase your work, explore portfolios by others, and get inspired!
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌟 What is this?
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**BuiltbyDevs** is a growing collection of real developer portfolios from across the globe.  
+Whether you're a beginner or experienced dev, you can:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 📮 Submit your portfolio
+- 🌍 Get discovered by others
+- 🔍 Explore fellow developers’ work
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ How to Get Featured
 
-To learn more about Next.js, take a look at the following resources:
+1. Head to [**builtbydevs**](https://builtbydevs.vercel.app)
+2. Click **“Submit your portfolio”**
+3. Fill out a short form with:
+   - Your name
+   - Portfolio URL
+   - Tech stack
+   - Role/designation
+   - Experience
+   - Country
+   - GitHub profile
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. We review and approve your submission.
+5. Once approved, it appears publicly on the site! 🎉
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 💡 Why submit?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- ✅ Get visibility for your personal brand
+- 🌐 Connect with other developers globally
+- 🧠 Inspire others (and get inspired)
+- 📁 Become part of a growing portfolio wall
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🖼️ How portfolios look
+
+Each portfolio displays a live thumbnail, your name, stack, country, and GitHub link (if provided).
+
+> *Think of it like a clean, modern wall of devs.*
+
+---
+
+## 🙌 Made by devs, for devs
+
+This project is open, free, and community-powered.  
+We believe in showcasing real developer journeys — from learners to pros.
+
+---
+
+### 📣 Submit yours today → [Submit Portfolio](https://builtbydevs.vercel.app/portfolio/submit)
+
+---
+
+## 📬 Want to contribute?
+
+If you're a dev and want to improve this platform, reach out or submit a PR.
