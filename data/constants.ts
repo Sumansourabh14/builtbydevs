@@ -1,5 +1,5 @@
 export const SITE_METADATA = {
-  title: "Built By Devs",
+  title: "BuiltByDevs",
   description: "Developer portfolio showcase",
 };
 

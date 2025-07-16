@@ -10,11 +10,10 @@ const Hero = () => {
         </h1>
         <p className="text-muted-foreground text-lg mb-8">
           Discover and showcase real-world developer portfolios from around the
-          globe. Filter by stack, style, or country — or share your own work
-          with the world.
+          globe. Share your own work with the world.
         </p>
-        <Button asChild className="py-8 px-12">
-          <Link href="/portfolio/submit" className="text-xl">
+        <Button asChild className="py-6 px-8 sm:py-8 sm:px-12">
+          <Link href="/portfolio/submit" className="text-lg sm:text-xl">
             Submit your portfolio
           </Link>
         </Button>
