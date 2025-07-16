@@ -13,19 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-
-const countries = [
-  "India",
-  "United States",
-  "United Kingdom",
-  "Germany",
-  "Canada",
-  "Australia",
-  "Singapore",
-  "Spain",
-  "France",
-  "Other",
-];
+import { countries } from "@/data/countries";
 
 export default function PortfolioForm() {
   const [loading, setLoading] = useState(false);
