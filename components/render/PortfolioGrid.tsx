@@ -33,6 +33,7 @@ const PortfolioGrid = async () => {
           githubUrl={dev.githubUrl}
           stack={dev.stack}
           url={dev.url}
+          approved={dev.approved}
         />
       ))}
     </div>
