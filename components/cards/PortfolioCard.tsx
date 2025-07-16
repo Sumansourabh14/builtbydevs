@@ -13,20 +13,20 @@ const PortfolioCard = ({
   githubUrl,
 }: PortfolioProps) => {
   return (
-    <Card className="w-full max-w-md mx-auto hover:shadow-lg transition-shadow">
-      <div className="group overflow-hidden rounded-md">
+    <Card className="w-full max-w-md mx-auto hover:shadow-lg transition-shadow pt-0">
+      <div className="relative aspect-video w-full overflow-hidden rounded-t-md group">
         <Link href={url} target="_blank" rel="noopener noreferrer">
           <Image
             src={`https://api.microlink.io/?url=${encodeURIComponent(
               url
             )}&screenshot=true&meta=false&embed=screenshot.url`}
             alt={`Screenshot of ${name}'s portfolio`}
-            width={800}
-            height={300}
-            className="rounded-t-md w-full object-cover h-48 transition-transform duration-300 group-hover:scale-105"
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </Link>
       </div>
+
       <CardHeader>
         <CardTitle className="text-lg font-semibold">{name}</CardTitle>
         <p className="text-sm text-muted-foreground">{designation}</p>
