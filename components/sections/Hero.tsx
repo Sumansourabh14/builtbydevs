@@ -13,7 +13,7 @@ const Hero = () => {
           globe. Filter by stack, style, or country — or share your own work
           with the world.
         </p>
-        <Button asChild className="py-8 px-16">
+        <Button asChild className="py-8 px-12">
           <Link href="/portfolio/submit" className="text-xl">
             Submit your portfolio
           </Link>
