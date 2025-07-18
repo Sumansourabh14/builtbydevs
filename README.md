@@ -1,6 +1,6 @@
-# 🛠️ BuiltbyDevs
+# BuiltbyDevs
 
-![alt text](image.png)
+![alt text](image-1.png)
 
 **A curated directory of developer portfolios.**  
 Showcase your work, explore portfolios by others, and get inspired!
